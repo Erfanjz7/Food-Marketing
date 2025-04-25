@@ -1,0 +1,1 @@
+export { DepthFrameWrapperByAnima } from "./DepthFrameWrapperByAnima";

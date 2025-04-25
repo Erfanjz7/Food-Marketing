@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Box } from "./screens/Box/Box";
+import { GalileoDesign } from "./screens/GalileoDesign/GalileoDesign";
 
 createRoot(document.getElementById("app")).render(
   <StrictMode>
-    <Box />
+    <GalileoDesign />
   </StrictMode>,
 );
