@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "food-marketing-9e760",
+    "production": "food-marketing-9e760"
+  },
+  "targets": {},
+  "etags": {}
+}

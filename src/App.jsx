@@ -1,24 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import { db } from './firebase'; // اینجا از فایل firebase.js استفاده می‌کنیم
+import { doc, setDoc } from 'firebase/firestore'; // استفاده از setDoc از firestore
+import reactLogo from './assets/react.svg';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  // تابع ذخیره‌سازی داده‌ها در Firestore
+  const saveToFirestore = async () => {
+    try {
+      // ذخیره‌سازی عدد count در Firestore
+      await setDoc(doc(db, "testCollection", "testDoc"), {
+        count: count,
+        timestamp: new Date().toISOString()
+      });
+      console.log("✅ داده‌ها با موفقیت ذخیره شدند.");
+    } catch (err) {
+      console.error("❌ خطا در ذخیره‌سازی داده:", err);
+    }
+  };
+
+  useEffect(() => {
+    // هر بار که مقدار count تغییر کنه، داده‌ها ذخیره میشن
+    saveToFirestore();
+  }, [count]);
 
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount(count + 1)}>
           count is {count}
         </button>
         <p>
@@ -29,7 +46,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
