@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Rastin";
+  src: local("Digi Rastin Bold"),
+  url('./assets/fonts/Digi-Rastin-Bold.ttf') format("truetype");
+}
+@font-face {
+  font-family: "Vazir";
+  src: local("Vazir"),
+  url('./assets/fonts/Vazir.ttf') format("truetype");
+}
+@font-face {
+  font-family: "Thief";
+  src: local("Secret Thief"),
+  url('./assets/fonts/Secret\ Thief.otf') format("truetype");
+}
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+
+* {
+  font-family: 'Vazir', sans-serif !important;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

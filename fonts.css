@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Rastin';
+    src: url('/fonts/Digi%20Rastin%20Bold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Rastin';
+    src: url('/fonts/Digi%20Rastin%20Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Vazir';
+    src: url('/fonts/Vazir.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }

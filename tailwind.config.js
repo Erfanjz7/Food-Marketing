@@ -47,6 +47,9 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
+        rastin: ['Rastin'],
+        vazir: ['Vazir'],
+        thief: ['Thief'],
         sans: [
           "ui-sans-serif",
           "system-ui",
@@ -55,6 +58,7 @@ module.exports = {
           '"Segoe UI Emoji"',
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
+          
         ],
       },
       keyframes: {
