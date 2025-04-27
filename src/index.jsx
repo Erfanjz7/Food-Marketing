@@ -8,6 +8,6 @@ import '../fonts.css';
 
 createRoot(document.getElementById("app")).render(
   <StrictMode>
-    <GalileoDesign2 />
+    <GalileoDesign />
   </StrictMode>,
 );

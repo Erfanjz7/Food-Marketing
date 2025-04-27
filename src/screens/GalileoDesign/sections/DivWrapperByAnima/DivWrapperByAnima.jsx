@@ -273,7 +273,7 @@ export const DivWrapperByAnima = () => {
       </div>
 
       {/* Section Title with Add Button */}
-      <div className="flex justify-between items-center pt-3 md:pt-5 pb-2 md:pb-3 px-3 md:px-4 w-full">
+      <div className="flex justify-between items-center pt-5 md:pt-5 pb-2 md:pb-3 px-3 md:px-4 w-full">
       <button
           className="flex items-center gap-1 px-2 md:px-3 py-1 md:py-2 rounded-lg bg-[#96724f] text-white hover:bg-[#7d5e41] transition-colors"
           onClick={() => setShowAddModal(true)}
@@ -315,11 +315,11 @@ export const DivWrapperByAnima = () => {
 
       {/* Add Food Modal */}
       {showAddModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-3 md:p-6">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-3 md:p-6 rtl">
           <div className="bg-white rounded-xl p-4 md:p-6 w-full max-w-lg max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-3 md:mb-4">
               <h2 className="[font-family:'Epilogue',Helvetica] font-bold text-[#1c140c] text-lg md:text-xl">
-                Add New Food
+                اضافه کردن غذای جدید
               </h2>
               <button 
                 onClick={() => setShowAddModal(false)}
@@ -333,13 +333,13 @@ export const DivWrapperByAnima = () => {
               {/* Food Name */}
               <div className="space-y-1 md:space-y-2">
                 <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
-                  Name
+                  اسم
                 </label>
                 <Input
                   name="name"
                   value={newFood.name}
                   onChange={handleInputChange}
-                  placeholder="Enter food name"
+                  placeholder="اسم غذا رو وارد کن"
                   required
                   className="border-2 border-[#E8DBD1] h-9 md:h-10"
                 />
@@ -348,7 +348,7 @@ export const DivWrapperByAnima = () => {
               {/* Main Food Image Upload */}
               <div className="space-y-1 md:space-y-2">
                 <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
-                  Main Image *
+                  تصویر اصلی *
                 </label>
                 <div className="flex flex-col gap-2">
                   <label className="flex flex-col items-center justify-center w-full h-24 md:h-32 border-2 border-dashed border-[#E8DBD1] rounded-lg cursor-pointer bg-[#F8F2EC] hover:bg-[#F2E8DF]">
@@ -367,7 +367,7 @@ export const DivWrapperByAnima = () => {
                       <div className="flex flex-col items-center justify-center pt-3 md:pt-5 pb-4 md:pb-6">
                         <Upload className="w-6 h-6 md:w-8 md:h-8 mb-1 md:mb-2 text-[#96724f]" />
                         <p className="mb-1 md:mb-2 text-xs md:text-sm text-[#96724f] text-center">
-                          <span className="font-medium">Click to upload</span> or drag and drop
+                          <span className="font-medium">کلیک کن تا آپلود کنی</span> یا عکس رو بکش و اینجا ولش کن
                         </p>
                         <p className="text-xs text-[#96724f]">
                           PNG, JPG or JPEG (MAX. 2MB)
@@ -388,7 +388,7 @@ export const DivWrapperByAnima = () => {
               {/* Additional Food Images */}
               <div className="space-y-1 md:space-y-2">
                 <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
-                  Additional Images (Optional)
+                  عکس های جانبی (اختیاری)
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {additionalImageFiles.slice(0, 3).map((file, index) => (
@@ -409,7 +409,7 @@ export const DivWrapperByAnima = () => {
                           <div className="flex flex-col items-center justify-center py-2">
                             <Upload className="w-4 h-4 md:w-6 md:h-6 mb-1 text-[#96724f]" />
                             <p className="text-xs text-[#96724f]">
-                              Image {index + 1}
+                              عکس {index + 1}
                             </p>
                           </div>
                         )}
@@ -437,13 +437,13 @@ export const DivWrapperByAnima = () => {
               {/* Food Description */}
               <div className="space-y-1 md:space-y-2">
                 <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
-                  Description
+                  توضیحات
                 </label>
                 <textarea
                   name="description"
                   value={newFood.description}
                   onChange={handleInputChange}
-                  placeholder="Enter food description"
+                  placeholder="توضیحات مربوط به غذا رو وارد کن"
                   required
                   rows="2"
                   className="w-full rounded-lg border-2 border-[#E8DBD1] px-3 py-2 text-sm md:text-base"
@@ -453,13 +453,13 @@ export const DivWrapperByAnima = () => {
               {/* Ingredients */}
               <div className="space-y-1 md:space-y-2">
                 <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
-                  Ingredients
+                  مواد اولیه
                 </label>
                 <div className="flex gap-2">
                   <Input
                     value={currentIngredient}
                     onChange={(e) => setCurrentIngredient(e.target.value)}
-                    placeholder="Add ingredient"
+                    placeholder="مواد اولیه رو اضافه کن "
                     className="border-2 border-[#E8DBD1] flex-1 h-9 md:h-10 text-sm md:text-base"
                   />
                   <button
@@ -467,7 +467,7 @@ export const DivWrapperByAnima = () => {
                     onClick={handleAddIngredient}
                     className="px-3 py-1 md:py-2 rounded-lg bg-[#E8DBD1] hover:bg-[#D9C8BA] text-[#1C140C] font-medium text-sm md:text-base"
                   >
-                    Add
+                    اضافه کردن
                   </button>
                 </div>
                 
@@ -489,34 +489,34 @@ export const DivWrapperByAnima = () => {
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-gray-400 text-xs md:text-sm mt-2">No ingredients added yet</p>
+                    <p className="text-gray-400 text-xs md:text-sm mt-2">هنوز مواد اولیه ای وارد نشده</p>
                   )}
                 </div>
               </div>
               
               {/* Cooking Duration Dropdown */}
               <div className="space-y-1 md:space-y-2">
-                <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
-                  Cooking Duration
+                <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text- p-20">
+                  مدت زمان پخت
                 </label>
                 <select
                   name="cookingDuration"
                   value={newFood.cookingDuration}
                   onChange={handleInputChange}
                   required
-                  className="w-full rounded-lg border-2 border-[#E8DBD1] px-3 py-2 h-9 md:h-10 text-sm md:text-base"
+                  className="w-full rounded-lg border-2 border-[#E8DBD1] px-3 py-2 h-24 md:h-10 text-sm md:text-base"
                 >
-                  <option value="">Select cooking duration</option>
-                  <option value="Under an hour">Under an hour</option>
-                  <option value="1-2 hours">1-2 hours</option>
-                  <option value="More than 2 hours">More than 2 hours</option>
+                  <option value="">مدت زمان پخت رو انتخاب کن </option>
+                  <option value="Under an hour">کمتر از یک ساعت </option>
+                  <option value="1-2 hours">بین 1 الی 2 ساعت </option>
+                  <option value="More than 2 hours">بیشتر از 2 ساعت </option>
                 </select>
               </div>
               
               {/* Difficulty */}
               <div className="space-y-1 md:space-y-2">
                 <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
-                  Difficulty
+                  میزان سختی
                 </label>
                 <select
                   name="difficulty"
@@ -525,23 +525,23 @@ export const DivWrapperByAnima = () => {
                   required
                   className="w-full rounded-lg border-2 border-[#E8DBD1] px-3 py-2 h-9 md:h-10 text-sm md:text-base"
                 >
-                  <option value="">Select difficulty</option>
-                  <option value="Easy">Easy</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Hard">Hard</option>
+                  <option value="">میزان سختی رو انتخاب کن</option>
+                  <option value="Easy">آسون</option>
+                  <option value="Medium">متوسط</option>
+                  <option value="Hard">سخت</option>
                 </select>
               </div>
               
               {/* Recipe Steps */}
               <div className="space-y-1 md:space-y-2">
                 <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
-                  Recipe Instructions
+                  دستور پخت 
                 </label>
                 <textarea
                   name="recipe"
                   value={newFood.recipe}
                   onChange={handleInputChange}
-                  placeholder="Enter recipe instructions"
+                  placeholder="دستور پخت رو وارد کنید"
                   required
                   rows="3"
                   className="w-full rounded-lg border-2 border-[#E8DBD1] px-3 py-2 text-sm md:text-base"
@@ -556,14 +556,14 @@ export const DivWrapperByAnima = () => {
                   className="px-3 md:px-4 py-1 md:py-2 rounded-lg border border-[#E8DBD1] text-[#1C140C] font-medium text-xs md:text-sm"
                   disabled={isUploading}
                 >
-                  Cancel
+                  انصراف
                 </button>
                 <button
                   type="submit"
-                  className="px-3 md:px-4 py-1 md:py-2 rounded-lg bg-[#96724f] text-white hover:bg-[#7d5e41] font-medium disabled:bg-[#c1ab96] disabled:cursor-not-allowed text-xs md:text-sm"
+                  className="px-3 md:px-4 py-1 md:py-2 rounded-lg bg-[#96724f] text-white hover:bg-[#7d5e41] font-medium disabled:bg-[#c1ab96] disabled:cursor-not-allowed text-xs md:text-sm trl"
                   disabled={isUploading}
                 >
-                  {isUploading ? "Uploading..." : "Save Food"}
+                  {isUploading ? "در حال ذخیره سازی..." : "ذخیره غذا"}
                 </button>
               </div>
             </form>

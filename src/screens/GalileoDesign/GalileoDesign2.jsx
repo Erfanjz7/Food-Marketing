@@ -62,69 +62,64 @@ export const GalileoDesign2 = () => {
   return (
     <main className="flex flex-col w-full bg-white">
           <section className="flex flex-col min-h-[600px] md:min-h-[800px] w-full bg-[#fcf9f7]">
-            <div className="flex flex-col items-start relative w-full">
-              <DepthFrameByAnima />
-              
+            
+         <div className="flex flex-col items-start relative w-full">
+           <DepthFrameByAnima />
+           <div className="flex items-start justify-center gap-1 p-5 w-full">
+             {/* Sidebar with images */}
+             <div className="flex flex-col items-start gap-4">
+               {sidebarImages.map((image, index) => (
+                <div key={index} className="flex w-[336px] gap-3 items-start">
+                  <div className="flex flex-col w-full items-start gap-3">
+                    {image.type === "background" ? (
+                      <div
+                        className={image.className}
+                        style={image.style}
+                        aria-label={image.alt}
+                      />
+                    ) : (
+                      <img
+                        className={image.className}
+                        alt={image.alt}
+                        src={image.src}
+                      />
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
-          </section>
+
+            {/* Main content area */}
+            <div className="flex flex-col w-[960px] items-start">
+              <div className="flex flex-col items-start w-full">
+                <div className="flex flex-col w-full px-4 py-3 items-start">
+                  <div className="relative w-full h-80 rounded-xl bg-[url(https://c.animaapp.com/m9yjlkqjSvoVOw/img/depth-6--frame-0.svg)] bg-cover bg-[50%_50%]" />
+                </div>
+              </div>
+
+              <DepthFrameWrapperByAnima />
+              <DivWrapperByAnima />
+              <DivByAnima />
+
+              <div className="flex flex-col items-start pl-[41px] pr-4 pt-1 pb-3 w-full">
+                <div className="w-full mt-[-1.00px] font-sans font-normal text-[#1c160c] text-[19px] leading-6">
+                  {recipeInstructions.map((instruction, index) => (
+                    <React.Fragment key={index}>
+                      {instruction}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+
+              <div className="w-[171px] h-[102px]" />
+
+              <SectionComponentNodeByAnima />
+            </div>
+          </div>
+        </div>
+        </section>
         </main>
-    
-        // <div className="flex flex-col items-start relative w-full">
-        //   <DepthFrameByAnima />
-
-        //   <div className="flex items-start justify-center gap-1 p-5 w-full">
-        //     {/* Sidebar with images */}
-        //     <div className="flex flex-col items-start gap-4">
-        //       {sidebarImages.map((image, index) => (
-        //         <div key={index} className="flex w-[336px] gap-3 items-start">
-        //           <div className="flex flex-col w-full items-start gap-3">
-        //             {image.type === "background" ? (
-        //               <div
-        //                 className={image.className}
-        //                 style={image.style}
-        //                 aria-label={image.alt}
-        //               />
-        //             ) : (
-        //               <img
-        //                 className={image.className}
-        //                 alt={image.alt}
-        //                 src={image.src}
-        //               />
-        //             )}
-        //           </div>
-        //         </div>
-        //       ))}
-        //     </div>
-
-        //     {/* Main content area */}
-        //     <div className="flex flex-col w-[960px] items-start">
-        //       <div className="flex flex-col items-start w-full">
-        //         <div className="flex flex-col w-full px-4 py-3 items-start">
-        //           <div className="relative w-full h-80 rounded-xl bg-[url(https://c.animaapp.com/m9yjlkqjSvoVOw/img/depth-6--frame-0.svg)] bg-cover bg-[50%_50%]" />
-        //         </div>
-        //       </div>
-
-        //       <DepthFrameWrapperByAnima />
-        //       <DivWrapperByAnima />
-        //       <DivByAnima />
-
-        //       <div className="flex flex-col items-start pl-[41px] pr-4 pt-1 pb-3 w-full">
-        //         <div className="w-full mt-[-1.00px] font-sans font-normal text-[#1c160c] text-[19px] leading-6">
-        //           {recipeInstructions.map((instruction, index) => (
-        //             <React.Fragment key={index}>
-        //               {instruction}
-        //               <br />
-        //             </React.Fragment>
-        //           ))}
-        //         </div>
-        //       </div>
-
-        //       <div className="w-[171px] h-[102px]" />
-
-        //       <SectionComponentNodeByAnima />
-        //     </div>
-        //   </div>
-        // </div>
       
   );
 };
