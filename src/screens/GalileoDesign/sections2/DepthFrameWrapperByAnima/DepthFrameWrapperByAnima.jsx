@@ -4,14 +4,14 @@ import { Card, CardContent } from "../../../../components/ui/card";
 export const DepthFrameWrapperByAnima = () => {
   // Recipe information data
   const recipeInfo = [
-    { label: "Preparation Time", value: "30 min" },
-    { label: "Cooking Time", value: "1 hr" },
-    { label: "difficulty", value: "5" },
+    { label: "زمان آماده سازی", value: "30 دقیقه" },
+    { label: "زمان پخت", value: "1 ساعت" },
+    { label: "سختی", value: "5" },
   ];
 
   return (
-    <Card className="border-none shadow-none">
-      <CardContent className="flex flex-col p-4 space-y-0">
+    <Card className="border-none shadow-none w-full rtl">
+      <div className="flex flex-col gap-0 p-4 space-y-0 w-full">
         {recipeInfo.map((item, index) => (
           <div
             key={index}
@@ -29,7 +29,7 @@ export const DepthFrameWrapperByAnima = () => {
             </div>
           </div>
         ))}
-      </CardContent>
+      </div>
     </Card>
   );
 };

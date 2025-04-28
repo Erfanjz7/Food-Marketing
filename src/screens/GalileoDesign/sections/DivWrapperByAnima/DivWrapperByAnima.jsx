@@ -256,7 +256,7 @@ export const DivWrapperByAnima = () => {
   };
 
   return (
-    <div className="flex flex-col w-full md:max-w-[960px] items-start flex-1 grow">
+    <div className="flex flex-col w-full items-start flex-1 grow">
       {/* Search Bar */}
       <div className="flex px-3 md:px-4 py-2 md:py-3 self-stretch w-full">
         <div className="flex items-center w-full h-10 md:h-12 rounded-xl bg-[#f2ede8] overflow-hidden">
@@ -274,6 +274,9 @@ export const DivWrapperByAnima = () => {
 
       {/* Section Title with Add Button */}
       <div className="flex justify-between items-center pt-5 md:pt-5 pb-2 md:pb-3 px-3 md:px-4 w-full">
+      <h2 className="[font-family:'Epilogue',Helvetica] font-bold text-[#1c140c] text-lg md:text-[22px] leading-7">
+          امروز میخوای چی بخوری؟
+      </h2>
       <button
           className="flex items-center gap-1 px-2 md:px-3 py-1 md:py-2 rounded-lg bg-[#96724f] text-white hover:bg-[#7d5e41] transition-colors"
           onClick={() => setShowAddModal(true)}
@@ -283,17 +286,15 @@ export const DivWrapperByAnima = () => {
             اضافه کردن غذای جدید
           </span>
         </button>
-        <h2 className="[font-family:'Epilogue',Helvetica] font-bold text-[#1c140c] text-lg md:text-[22px] leading-7">
-          امروز میخوای چی بخوری؟
-        </h2>
+        
         
       </div>
 
       {/* Recipe Cards Grid */}
-      <div className="flex flex-col items-start gap-3 p-3 md:p-4 w-full rtl">
+      <div className="flex flex-col items-start gap-3 p-3 md:p-4 rtl">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-3 w-full">
           {filteredFoods.map((food) => (
-            <Card key={food.id} className="w-full border-none shadow-none">
+            <Card key={food.id} className="w-full border-none shadow-none w-[176px]">
               <CardContent className="flex flex-col items-start gap-2 md:gap-3 p-0 pb-2 md:pb-3">
                 <div
                   className="w-full h-[75px] sm:h-[85px] md:h-[93px] rounded-lg md:rounded-xl bg-cover bg-center"
@@ -496,7 +497,7 @@ export const DivWrapperByAnima = () => {
               
               {/* Cooking Duration Dropdown */}
               <div className="space-y-1 md:space-y-2">
-                <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text- p-20">
+              <label className="[font-family:'Epilogue',Helvetica] font-medium text-[#1c140c] text-sm md:text-base">
                   مدت زمان پخت
                 </label>
                 <select
